@@ -13,7 +13,8 @@ body {
     min-height: 100vh;
     background-image: url('/back-body.jpg');
     background-position: center;
-    background-size: cover
+    background-size: cover;
+    flex-direction: column;
 }
 
 .container {
@@ -163,7 +164,7 @@ body {
 
     body {
         overflow-x: hidden; /* No permite el desplazamiento horizontal */
-        overflow-y: auto;   /* Permite el desplazamiento vertical si es necesario */
+        overflow-y: hidden; 
     }
     .options .option input {
         height: 10px;
