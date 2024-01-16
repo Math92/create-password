@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$font-primary: "Roboto";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-primary;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/img/back-body.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .container {
+        overflow: hidden;
+        width: 500px;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            .input-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .pass-indicator {
+                width: 100%;
+                height: 4px;
+                position: relative;
+                margin-top: 0.75rem;
+                border-radius: 25px;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 50%;
+                    border-radius: inherit;
+                    transition: width 0.3s ease;
+                }
+
+                &#weak::before {
+                    width: 20%;
+                    background: #e64a4a;
+                }
+
+                &#medium::before {
+                    width: 50%;
+                    background: #f1c80b;
+                }
+
+                &#strong::before {
+                    width: 100%;
+                    background: #43A047;
+                }
+            }
+
+            .pass-settings {
+                cursor: pointer;
+
+                .options {
+                    .option label {
+                        /* Update for cursor on labels within .option */
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body .container .wrapper {
+        align-items: center;
+    }
+
+    body .container .wrapper .input-box {
+        flex-direction: column;
+    }
+
+    body .container h2 {
+        text-align: center;
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+}
